@@ -3,7 +3,7 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID="645697709966"
         AWS_DEFAULT_REGION="ap-south-1"
-        IMAGE_REPO_NAME="ecr"
+        IMAGE_REPO_NAME="eeccrr"
         IMAGE_TAG="Latest"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
@@ -21,7 +21,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Kamilullah/jenkinspro.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Kamilullah/jenkinspro.git']])
             }
         }
   
